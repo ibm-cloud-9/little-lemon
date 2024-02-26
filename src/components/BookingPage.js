@@ -1,12 +1,27 @@
-import {React, useState} from "react";
+import {React, useState, useReducer} from "react";
 import { BookingForm } from "./BookingForm";
 
 function BookingPage(props) {
 
-    const [availableTimes, setAvailableTimes] = useState([]);
+    const updateTimes = (availableTimes, date) => {
+
+    };
+
+    const initializeTimes = (initAvailableTimes) => [
+        ...initAvailableTimes
+    ];
+
+    const [availableTimes, dispatchOnDateChange] = useReducer(
+        updateTimes,
+        [],
+        initializeTimes
+    );
 
     return (
-        <BookingForm bookings={props.availableTimes}></BookingForm>
+        <BookingForm 
+            availableTimes = {availableTimes}
+            dispatchOnDateChange = {dispatchOnDateChange}>
+        </BookingForm>
     )
 }
 
