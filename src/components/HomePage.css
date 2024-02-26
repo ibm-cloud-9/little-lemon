@@ -1,0 +1,149 @@
+/*
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #F3E3D3;
+	font-family: Arial, serif;
+	margin-bottom: 3rem;
+}
+
+h1 {
+	font-size: 3rem;
+	text-align: center;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h1+p {
+	text-align: center;
+}
+
+header {
+	background-color: #000000;
+}
+
+header>img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #000000;
+}
+
+nav {
+	margin-top: -1rem;
+	background-color: #E4A48C;
+}
+
+nav ul {
+	list-style: none;
+	text-align: center;
+}
+
+nav li {
+	display: inline-block;
+}
+
+
+a:link {
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+a:hover {
+	background-color: #000000;
+	color: #D4644C;
+}
+
+a:active {
+	color: yellow;
+}
+
+section {
+	display: flex;
+	margin-left: 10%;
+}
+
+article {
+	flex: 1;
+}
+
+
+footer {
+	background-color: #000000;
+	display: flex;
+}
+
+footer div {
+	flex: 1;
+	border: solid 1px black;
+}
+
+footer {
+	text-align: center;
+	font-size: 2rem;
+}
+
+.btn {
+	border: solid 1px #000000;
+}
+
+.button-book {
+	background-color: #F3E3D3;
+	color: #000000;
+}
+
+.button-book:hover {
+	background-color: #000000;
+	color: #F3E3D3;
+}
+
+.card {
+	border-radius: 25px;
+}
+
+.copyright-text {
+	font-size: 1rem;
+	color: #E4A48C;
+	margin-top: 10px;
+}
+
+#sales-marquis {
+	font-size: 2rem;
+	opacity: 0.50;
+	animation: marquis 10s infinite ease-in;
+	color: white;
+	text-align: center;
+}
+
+@keyframes marquis {
+
+0% {
+	opacity: 0
+}
+
+30% {
+	opacity: .25
+}
+
+50% {
+	opacity: .50;
+}
+
+70% {
+	opacity: .25
+}
+
+100% {
+	opacity: .0
+}
+}
+
+*/

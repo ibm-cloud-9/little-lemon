@@ -1,0 +1,87 @@
+.nav-header {
+	overflow: hidden;
+	background-color: #f1f1f1;
+	padding: 20px 10px;
+  }
+  
+  .nav-header a {
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 12pt;
+	line-height: 25px;
+	border-radius: 4px;
+  }
+  
+  .nav-header a.nav-logo {
+	/*font-size: 25px;*/
+	font-weight: bold;
+  }
+  
+  .nav-header a:hover {
+	background-color: #495E57;;
+	color: #FFFF00;
+  }
+  
+  .nav-header a.active {
+	background-color: #FFFF00;
+	color: #000000;
+	font-weight:bold;
+  }
+  
+
+
+/*
+nav ul {
+	list-style: none;
+	text-align: center;
+    
+}
+
+nav li {
+	display: inline-block;
+}
+
+
+a:link {
+	color: black;
+}
+
+a:link a:nav-item {
+	color: green;
+}
+
+a:visited {
+	color: black;
+}
+
+a:hover {
+	background-color: #000000;
+	color: #D4644C;
+}
+
+a:active {
+	color: yellow;
+}
+*/
+/*
+.nav-item {
+	list-style: none;
+	text-align: center;
+}
+
+.nav-item {
+	display: inline-block;
+}
+
+.nav-div {
+    display: flex;
+}
+*/
+.nav-logo {
+  float: left;
+  margin-right: 20px;
+  height: 40px;
+}

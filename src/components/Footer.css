@@ -1,0 +1,74 @@
+.footer-container {
+    color: white;
+    position: relative; /* Ensure proper positioning */
+    width: 100%; /* Set the desired width */
+    height: 50vh; /* Set the desired height (e.g., full viewport height) */
+    background-color: #495E57;
+}
+
+.footer-block {
+    text-align: left;
+    width: 250px;
+    font-size: 16pt;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    /*border: solid 1px black; */
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+	float: left;
+	color: black;
+	text-align: left;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 12pt;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin: 10px 0;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-nav a:hover {
+	background-color: #495E57;;
+	color: #FFFF00;
+  }
+  
+.footer-nav a.active {
+	background-color: #FFFF00;
+	color: #000000;
+	font-weight:bold;
+}
+
+.footer-left {
+    float: left;
+}
+
+.footer-right {
+    float: right;
+}
+
+.footer-logo {
+    float: left;
+    margin-right: 20px;
+    height: 40px;
+  }
+  
+.footer-copyright {
+    text-align: left;
+    font-size: 12pt;
+    color: #000000;
+}
