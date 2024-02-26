@@ -1,9 +1,9 @@
-import { BookingForm } from "./BookingForm";
-import RegistrationForm from "./RegistrationForm";
+
+import BookingPage from "./BookingPage";
 
 function Reservations() {
     return (
-        <BookingForm />
+        <BookingPage />
     )
 }
 

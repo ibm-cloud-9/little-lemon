@@ -11,19 +11,22 @@ function BookingForm(props) {
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState('Birthday');
     const [time, setTime] = useState("12:00");
-    const [availableTimes, setAvailableTimes] = useState([]);
+    //const [availableTimes, setAvailableTimes] = useState([]);
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
+    const updateTimes = (availableTimes, date) => {
 
-    function reducer(state, action) {
-        if (action.type === 'book_reservation') {
-            return {
-                date: state.date, 
-                time: state.time, 
-                guests: state.guests, 
-                occasion: state.occasion
-            };
-        }
-    }
+    };
+
+    const initializeTimes = (initAvailableTimes) => [
+        ...initAvailableTimes
+    ];
+
+    const [availableTimes, dispatchOnDateChange] = useReducer(
+        updateTimes,
+        [],
+        initializeTimes
+    );
 
     const resetForm = () => { 
         setDate('');
@@ -43,13 +46,14 @@ function BookingForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (isFormValid()) {
 
+        } else {
+
+        }
         // Reset form input
         resetForm()
     };
-
-
-    // https://www.coursera.org/learn/advanced-react/lecture/VpQWd/creating-a-form-component-in-react
 
     return (
         <form className="booking-form" onSubmit={handleSubmit}>
