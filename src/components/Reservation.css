@@ -1,0 +1,42 @@
+
+.reservation-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #495E57;
+  padding-top:30px;
+  padding-bottom: 30px;
+}
+.reservation-card {
+  display: flex;
+  flex-shrink: 1 1;
+  width: 300px;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  border-radius: 20px;
+  justify-content: center;
+  margin: 0 auto;
+  border-top-left-radius: 20px;
+  border-radius: 50px;
+}
+
+.reservation-form-title {
+  text-align: center;
+  font-size: 16pt;
+  color: #FFFF00;
+  margin-bottom: 16px;  
+}
+
+.reservation-article {
+  background-color: #495E57;
+
+}
+
+@media screen and (max-width: 575px) {
+  .cards {
+    display: block;
+    align-items: center;
+    justify-content: left;
+  }
+}

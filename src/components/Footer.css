@@ -3,14 +3,14 @@
     position: relative; /* Ensure proper positioning */
     width: 100%; /* Set the desired width */
     height: 50vh; /* Set the desired height (e.g., full viewport height) */
-    background-color: #495E57;
+    background-color: #f1f1f1; /*#495E57;*/
 }
 
 .footer-block {
     text-align: left;
-    width: 250px;
+    width: 245px;
     font-size: 16pt;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 80px;
     margin-left: 20px;
     margin-right: 20px;
@@ -64,7 +64,7 @@
 .footer-logo {
     float: left;
     margin-right: 20px;
-    height: 40px;
+    /*height: 40px;*/
   }
   
 .footer-copyright {

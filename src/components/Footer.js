@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import './Footer.css'
 
@@ -9,7 +9,7 @@ function Footer() {
         <>
         <article className="footer-container">
             <div className="footer-block footer-nav">
-                <img className="footer-logo" src="footer-logo.jpg"/>
+                <img className="footer-logo" src="footer.png"/>
             </div>
             <div className="footer-block footer-nav">
                 <p>Navigation</p>

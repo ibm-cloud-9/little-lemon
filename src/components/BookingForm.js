@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReservationButton from './ReservationButton';
 import './BookingForm.css'
+import { submitAPI } from "./Api";
 
 const DateErrorMessage = () => { 
     return ( 
@@ -25,72 +26,92 @@ function BookingForm({availableTimes, dispatchOnDateChange}) {
     const [date, setDate] = useState('');
     const [guests, setGuests] = useState(0);
     const [occasion, setOccasion] = useState('');
-    const [time, setTime] = availableTimes[0];
-    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+    const [time, setTime] = useState('');
+    const [confirmation, setConfirmation] = useState('failed');
 
- 
+
     const resetForm = () => { 
         setDate('');
-        setTime('12:00');
-        setGuests(1);
-        setOccasion('Birthday');
+        setTime('');
+        setGuests(0);
+        setOccasion('');
     };
 
     const isFormValid = () => {
         return ( 
             date && 
             time && 
-            occasion &&
             guests >=1 && guests <=10
           ); 
     };
 
+    const buildMessage = (formData) => {
+        return (
+            "On " + formData.date + "\nat " + formData.time + "\nwith " + formData.guests + " guest(s) " + (formData.occasion === '' ?  '' : '\nfor your ' + formData.occasion)
+        )
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
         if (isFormValid()) {
 
-        } else {
+            var data = new FormData(e.target);
+            var formData = Object.fromEntries(data.entries());          
 
+            if (formData != null) {
+                if (submitAPI(formData)) {
+                    setConfirmation("success")
+                    alert("Thank you, Your reservation has been created!:\n\n" + buildMessage(formData));
+                }
+            }
+
+            resetForm();
         }
-        // Reset form input
-        resetForm()
+        else {
+            setConfirmation("failed")
+        }
     };
 
     const handleDateChange = (e) => {
-        if (e.target.name === 'res-date') {
+
+        if (e.target.name === 'date') {
             dispatchOnDateChange(e.target.value);
+            setDate(e.target.value);
         }
     };
 
     return (
+
         <form className="booking-form" onSubmit={handleSubmit}>
-            <label htmlFor="res-date">Choose date</label>
+
+            <label htmlFor="date" className="booking-label-required">Choose date</label>
             <input 
                 type="date" 
-                id="res-date" 
-                name="res-date"
+                id="date" 
+                name="date"
                 value={date}
                 onChange={handleDateChange}
                 placeholder="Reservation Date"
-                />
-            {date.value == '' ? (<DateErrorMessage /> ) : null} 
+                required/>
+            {date.value === '' ? (<DateErrorMessage /> ) : null} 
 
-            <label htmlFor="res-time">Choose time</label>
+            <label htmlFor="time" className="booking-label-required">Choose time</label>
             <select 
-                id="res-time" 
-                name="res-time"
+                id="time" 
+                name="time"
                 value={time} 
-                onChange={(e) =>{
+                onChange={(e) => {
                 setTime(e.target.value);
-                }}>
+                }}
+                required
+                >
 
                 {availableTimes.map(time => (
                     <option key={time}>{time}</option>
                 ))}
 
             </select>
-            {time.value == '' ? (<TimeErrorMessage /> ) : null} 
-            <label htmlFor="guests">Number of guests</label>
+            {time.value === '' ? (<TimeErrorMessage /> ) : null} 
+            <label htmlFor="guests" className="booking-label-required">Number of guests</label>
             <input 
                 type="number" 
                 placeholder="1" 
@@ -101,7 +122,8 @@ function BookingForm({availableTimes, dispatchOnDateChange}) {
                 value={guests}
                 onChange={(e) => {
                     setGuests(e.target.value)
-                }}/>
+                }}
+                required />
             {(guests.number < 1 || guests.number > 10) ? (<GuestsErrorMessage /> ) : null} 
 
             <label htmlFor="occasion">Occasion</label>
@@ -113,9 +135,18 @@ function BookingForm({availableTimes, dispatchOnDateChange}) {
                     setOccasion(e.target.value)
                 }}
                 >
+                <option disabled></option>
                 <option>Birthday</option>
                 <option>Anniversary</option>
             </select>
+
+            <input 
+                type="hidden" 
+                id="confirmation" 
+                name="confirmation"
+                value={confirmation}
+                placeholder="confirmation"
+                />
 
             <ReservationButton 
                 type="submit" 
@@ -127,4 +158,4 @@ function BookingForm({availableTimes, dispatchOnDateChange}) {
     )
 }
 
-export {BookingForm};
+export default BookingForm;
